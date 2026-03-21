@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Usuario
+from .forms import UsuarioForm
 
 def lista_usuarios(request):
     usuario = Usuario.objects.all()
@@ -7,13 +8,13 @@ def lista_usuarios(request):
 
 def crear_usuario(request):
     if request.method == "POST":
-        nombre = request.POST.get("nombre")
-
-        if nombre:
-            Usuario.objects.create(nombre = nombre)
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
             return redirect("/")
-    
-    return render(request,("usuarios/crear.html"))
+    else:
+        form = UsuarioForm()    
+    return render(request,"usuarios/crear.html", {"form":form})
 
 def eliminar_usuario(request,id):
     usuario = Usuario.objects.get(id=id)
