@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>lista de usuarios</h1>
+    <a href="/crear/">➕ Crear nuevo usuario</a>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.nombre }}</li>
+        {% empty %}
+            <li>No hay usuarios</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
