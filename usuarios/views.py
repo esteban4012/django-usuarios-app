@@ -19,3 +19,14 @@ def eliminar_usuario(request,id):
     usuario = Usuario.objects.get(id=id)
     usuario.delete()
     return redirect("/")
+
+
+def editar_usuario(request,id):
+    usuario = Usuario.objects.get(id=id)
+    if request.method == "POST":
+        nombre = request.POST.get("nombre")
+        if nombre:
+            usuario.nombre = nombre
+            usuario.save()
+            return redirect("/")
+    return render(request,"usuarios/editar.html", {"usuario" : usuario})
