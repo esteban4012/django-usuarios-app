@@ -22,12 +22,15 @@ def eliminar_usuario(request,id):
     return redirect("/")
 
 
-def editar_usuario(request,id):
+def editar_usuario(request, id):
     usuario = Usuario.objects.get(id=id)
-    if request.method == "POST":
-        nombre = request.POST.get("nombre")
-        if nombre:
-            usuario.nombre = nombre
-            usuario.save()
-            return redirect("/")
-    return render(request,"usuarios/editar.html", {"usuario" : usuario})
+
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = UsuarioForm(instance=usuario)
+
+    return render(request, 'usuarios/editar.html', {'form': form})
