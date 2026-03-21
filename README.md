@@ -1,33 +1,37 @@
-# 🌐 Sistema de Gestión de Usuarios - Django
+# 🧑‍💻 Sistema de Gestión de Usuarios - Django
 
-Aplicación web desarrollada con Django que permite gestionar usuarios mediante operaciones CRUD (Crear, Leer, Eliminar).
+Aplicación web desarrollada con Django que permite gestionar usuarios mediante operaciones CRUD (Crear, Listar, Editar y Eliminar).
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## 🚀 Funcionalidades
+
+* ✅ Crear usuarios desde la web
+* 📋 Listar usuarios almacenados en base de datos
+* ✏️ Editar usuarios
+* ❌ Eliminar usuarios
+* 🧠 Validación de datos con formularios de Django
+* 🎨 Interfaz mejorada con Bootstrap
+
+---
+
+## 🛠️ Tecnologías utilizadas
 
 * Python
 * Django
-* SQLite (base de datos por defecto)
+* HTML
+* Bootstrap
+* SQLite
 
 ---
 
-## 📌 Funcionalidades
+## 📸 Vista previa
 
-* Registro de usuarios
-* Visualización de usuarios
-* Eliminación de usuarios
-* Validación de datos
+![imagen de app](image.png)
 
 ---
 
-## 🎯 Objetivo del proyecto
-
-Desarrollar una aplicación web funcional que permita aplicar conceptos de backend como manejo de bases de datos, estructuras CRUD y buenas prácticas de desarrollo.
-
----
-
-## ▶️ Cómo ejecutar el proyecto
+## ⚙️ Instalación
 
 1. Clonar el repositorio:
 
@@ -41,26 +45,43 @@ git clone https://github.com/esteban4012/django-usuarios-app.git
 cd django-usuarios-app
 ```
 
-3. Ejecutar el servidor:
+3. Crear entorno virtual:
+
+```bash
+python -m venv env
+```
+
+4. Activar entorno:
+
+* Windows:
+
+```bash
+env\Scripts\activate
+```
+
+5. Instalar dependencias:
+
+```bash
+pip install django
+```
+
+6. Ejecutar migraciones:
+
+```bash
+python manage.py migrate
+```
+
+7. Ejecutar servidor:
 
 ```bash
 python manage.py runserver
 ```
 
-4. Abrir en navegador:
-
-```
-http://127.0.0.1:8000/
-```
-
 ---
 
-## 📈 Próximas mejoras
+## 🎯 Objetivo del proyecto
 
-* Interfaz con HTML/CSS
-* Formularios con Django Forms
-* Edición de usuarios (Update)
-* Eliminación desde interfaz web
+Este proyecto fue desarrollado como parte de mi proceso de aprendizaje en desarrollo web backend con Django, con el objetivo de prepararme para mi primera experiencia laboral como desarrollador.
 
 ---
 
