@@ -14,3 +14,8 @@ def crear_usuario(request):
             return redirect("/")
     
     return render(request,("usuarios/crear.html"))
+
+def eliminar_usuario(request,id):
+    usuario = Usuario.objects.get(id=id)
+    usuario.delete()
+    return redirect("/")

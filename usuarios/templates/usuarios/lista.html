@@ -11,6 +11,7 @@
     <ul>
         {% for usuario in usuarios %}
             <li>{{ usuario.nombre }}</li>
+            <a href="/eliminar/{{ usuario.id }}">❌ Eliminar</a>
         {% empty %}
             <li>No hay usuarios</li>
         {% endfor %}
